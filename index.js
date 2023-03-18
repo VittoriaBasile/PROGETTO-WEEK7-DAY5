@@ -15,22 +15,22 @@ fetch(url, {
     for (const prodotto of prodotti) {
       const col = document.createElement("div");
       col.className = "col";
-      col.innerHTML = ` <div class="card" style="width: 18rem">
+      col.innerHTML = ` <div class="card">
       <img
         style="object-fit: cover"
-        src= ${img.src.medium} 
+        src= ${prodotto.imageUrl} 
         class="card-img-top img-fluid"
         alt="card-pic"
       />
       <div class="card-body">
         <h5 class="card-title">${prodotto.name}</h5>
-        <p class="card-text">${prodotto.brend}</p>
+        <p class="card-text">${prodotto.brand}</p>
         <p class="card-text">${prodotto.price}</p>
         <div class="d-flex justify-content-center gap-2">
-          <a href="details.html?id=${id}" class="btn btn-primary"
+          <a href="details.html?id=${prodotto._id}" class="btn btn-primary"
             >Scopri di più</a
           >
-          <a href="backoffice.html?id=${id}" class="btn btn-warning"
+          <a href="backoffice.html?id=${prodotto._id}" class="btn btn-warning"
             >Modifica</a
           >
         </div>`;

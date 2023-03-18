@@ -9,9 +9,10 @@ const method = selectedId ? "PUT" : "POST";
 
 window.onload = () => {
   if (selectedId) {
-    document.getElementById("title").innerText = "Edit Product";
+    document.getElementById("title").innerText = "Modifica Prodotto";
     document.getElementById("edit").classList.remove("d-none");
     document.getElementById("delete").classList.remove("d-none");
+    document.getElementById("reset").classList.add("d-none");
     document.getElementById("create").classList.add("d-none");
 
     fetch(endpoint, {
@@ -32,15 +33,8 @@ window.onload = () => {
   }
 };
 
-const submit = (event) => {
+const invio = (event) => {
   event.preventDefault();
-  const newProduct = {
-    name: document.getElementById("name").value,
-    description: document.getElementById("description").value,
-    brand: document.getElementById("brand").value,
-    imageUrl: document.getElementById("imgUrl").value,
-    price: document.getElementById("price").value,
-  };
   fetch(endpoint, {
     method,
     body: JSON.stringify(newProduct),
@@ -48,11 +42,28 @@ const submit = (event) => {
       Authorization: ` Bearer ${token}`,
       "Content-Type": "application/json",
     },
-  }).catch((error) => console.log(error));
+  })
+    .then((response) => {
+      if (response.ok) {
+        window.location.href = "index.html";
+      }
+    })
+    .catch((error) => console.log(error));
+};
+
+const resetta = () => {
+  const hasAccepted = confirm("Sei sicuro di voler eliminare il prodotto?");
+  if (hasAccepted) {
+    document.getElementById("name").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("brand").value = "";
+    document.getElementById("imgUrl").value = "";
+    document.getElementById("price").value = "";
+  }
 };
 
 const cancella = () => {
-  const hasAccepted = confirm("Do you really want to delete this product?");
+  const hasAccepted = confirm("Sei sicuro di voler eliminare il prodotto?");
   if (hasAccepted) {
     fetch(endpoint, {
       method: "DELETE",
@@ -60,7 +71,11 @@ const cancella = () => {
         Authorization: ` Bearer ${token}`,
       },
     })
-      .then((res) => res.json())
+      .then((response) => {
+        if (response.ok) {
+          window.location.href = "index.html";
+        }
+      })
       .catch((error) => console.log(error));
   }
 };

@@ -20,11 +20,7 @@
       <div class="container-fluid">
         <div>
           <a href="index.html">
-            <img
-              style="width: 150px"
-              src="/assets/Gradient-ecommerce-logo-Online-shop-Graphics-14011546-1-1-580x386.png"
-              alt=""
-            />
+            <img style="width: 150px" src="/assets/logo.png" alt="" />
           </a>
         </div>
 
@@ -50,24 +46,24 @@
     </nav>
     <div class="container">
       <h2 id="title" class="py-5">Crea prodotto</h2>
-      <form onsubmit="submit">
+      <form id="form" onsubmit="invio(event)">
         <div class="mb-3">
           <label for="name" class="form-label">nome prodotto:</label>
-          <input type="text" class="form-control" id="name" />
+          <input type="text" class="form-control" id="name" required />
         </div>
         <div class="mb-3">
           <label for="brand" class="form-label">brand prodotto:</label>
-          <input type="text" class="form-control" id="brand" />
+          <input type="text" class="form-control" id="brand" required />
         </div>
         <div class="mb-3">
           <label for="imgUrl" class="form-label"
             >URL dell'immagine del prodotto:</label
           >
-          <input type="text" class="form-control" id="imgUrl" />
+          <input type="text" class="form-control" id="imgUrl" required />
         </div>
         <div class="mb-3">
           <label for="price" class="form-label">prezzo del prodotto:</label>
-          <input type="text" class="form-control" id="price" />
+          <input type="number" class="form-control" id="price" required />
         </div>
 
         <div class="mb-3">
@@ -82,6 +78,14 @@
           </button>
           <button id="edit" type="submit" class="btn btn-success d-none">
             MODIFICA
+          </button>
+          <button
+            onclick="resetta()"
+            id="reset"
+            type="button"
+            class="btn btn-success"
+          >
+            RESET
           </button>
           <button
             onclick="cancella()"
