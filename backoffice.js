@@ -35,6 +35,14 @@ window.onload = () => {
 
 const invio = (event) => {
   event.preventDefault();
+
+  const newProduct = {
+    name: document.getElementById("name").value,
+    description: document.getElementById("description").value,
+    brand: document.getElementById("brand").value,
+    imageUrl: document.getElementById("imgUrl").value,
+    price: document.getElementById("price").value,
+  };
   fetch(endpoint, {
     method,
     body: JSON.stringify(newProduct),
