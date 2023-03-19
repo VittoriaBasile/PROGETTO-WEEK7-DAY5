@@ -19,12 +19,12 @@ window.onload = () => {
       row.innerHTML = "";
 
       const col = document.createElement("div");
-      col.className = "col-6";
-      col.innerHTML = ` <div class="card">
+      col.className = "col";
+      col.innerHTML = ` <div class="card container ">
                                 <img
-                                    style="object-fit: cover"
+                                    style="object-fit: cover; width: 500px; ""
                                     src= ${prodotto.imageUrl} 
-                                    class="card-img-top img-fluid"
+                                    class="card-img-top img-fluid d-block"
                                     alt="card-pic"
                                 />
                                 <div class="card-body">
