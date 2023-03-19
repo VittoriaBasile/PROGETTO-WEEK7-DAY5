@@ -24,7 +24,7 @@ window.onload = () => {
       col.className = "col-6";
       col.innerHTML = ` <div class="container ">
                                 <img
-                                    style="object-fit: cover; height:700px; width:"200"
+                                    style="object-fit: cover; height:600px; width:"200"
                                     src= ${prodotto.imageUrl} 
                                     class="card-img-top img-fluid d-block"
                                     alt="card-pic"

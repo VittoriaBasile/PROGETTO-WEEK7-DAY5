@@ -17,7 +17,7 @@ fetch(url, {
     for (const prodotto of prodotti) {
       const col = document.createElement("div");
       col.className = "col";
-      col.innerHTML = ` <div class="card mt-4" style="height: 500px;">
+      col.innerHTML = ` <div class="card mt-4 border border-dark-subtle" style="height: 500px;">
       <img
         style="object-fit: cover"
         src= ${prodotto.imageUrl} 
