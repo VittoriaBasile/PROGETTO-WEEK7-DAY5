@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="backoffice.css" />
     <title>Document</title>
   </head>
   <body>
@@ -64,30 +65,53 @@
           <div class="mb-3">
             <label for="name" class="form-label">nome prodotto:</label>
             <input type="text" class="form-control" id="name" required />
+            <div class="form-text text-danger">
+              Inserisci il nome del prodotto
+            </div>
           </div>
           <div class="mb-3">
             <label for="brand" class="form-label">brand prodotto:</label>
             <input type="text" class="form-control" id="brand" required />
+            <div class="form-text text-danger">
+              Inserisci il brand del prodotto
+            </div>
           </div>
           <div class="mb-3">
             <label for="imgUrl" class="form-label"
               >URL dell'immagine del prodotto:</label
             >
             <input type="text" class="form-control" id="imgUrl" required />
+            <div class="form-text text-danger">
+              Inserisci l' URL dell' immagine
+            </div>
           </div>
           <div class="mb-3">
             <label for="price" class="form-label">prezzo del prodotto:</label>
             <input type="number" class="form-control" id="price" required />
+            <div class="form-text text-danger">
+              Inserisci il prezzo del prodotto
+            </div>
           </div>
 
           <div class="mb-3">
             <label for="description" class="form-label"
               >descrizione prodotto</label
             >
-            <textarea class="form-control" id="description" rows="3"></textarea>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="3"
+              required
+            ></textarea>
+            <div class="form-text text-danger">Inserisci la descrizione</div>
           </div>
           <div class="d-flex justify-content-around mb-5">
-            <button id="create" type="submit" class="btn btn-primary">
+            <button
+              onclick="validazione()"
+              id="create"
+              type="submit"
+              class="btn btn-primary"
+            >
               INVIA
             </button>
             <button id="edit" type="submit" class="btn btn-success d-none">

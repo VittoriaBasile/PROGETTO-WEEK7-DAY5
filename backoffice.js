@@ -7,6 +7,11 @@ const selectedId = URLParams.get("id");
 const endpoint = selectedId ? url + selectedId : url;
 const method = selectedId ? "PUT" : "POST";
 
+const validazione = () => {
+  const form = document.querySelector("form");
+  form.classList.add("validated");
+};
+
 window.onload = () => {
   if (selectedId) {
     document.getElementById("title").innerText = "Modifica Prodotto";
@@ -67,6 +72,8 @@ const resetta = () => {
     document.getElementById("brand").value = "";
     document.getElementById("imgUrl").value = "";
     document.getElementById("price").value = "";
+    const form = document.querySelector("form");
+    form.classList.remove("validated");
   }
 };
 
