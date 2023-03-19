@@ -19,8 +19,8 @@ window.onload = () => {
       row.innerHTML = "";
 
       const col = document.createElement("div");
-      col.className = "col";
-      col.innerHTML = ` <div class="card" style="width: 18rem">
+      col.className = "col-6";
+      col.innerHTML = ` <div class="card">
                                 <img
                                     style="object-fit: cover"
                                     src= ${prodotto.imageUrl} 
@@ -30,8 +30,8 @@ window.onload = () => {
                                 <div class="card-body">
                                     <h5 class="card-title">${prodotto.name}</h5>
                                     <p class="card-text">${prodotto.brand}</p>
-                                    <p class="card-text">${prodotto.price}</p>
-                                    <p class="card-text" >${prodotto.description}</p>
+                                    <p class="card-text">${prodotto.price}€</p>
+                                    <p class="card-text d-flex flex-wrap" >${prodotto.description}</p>
                                 </div>
                         </div>`;
 
