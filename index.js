@@ -1,6 +1,7 @@
 const url = "https://striveschool-api.herokuapp.com/api/product/";
 const token =
   " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDE0MGI0MmY4MWI0MjAwMTM5YjI3YjciLCJpYXQiOjE2NzkwMzYzNzAsImV4cCI6MTY4MDI0NTk3MH0.Bx73lB6yVNt7AUJEjfLxcitd5wgiPHhLCqZLryFCN5M";
+
 fetch(url, {
   headers: {
     Authorization: `Bearer ${token}`,
@@ -36,7 +37,19 @@ fetch(url, {
             >Modifica</a
           >
         </div>`;
-
       row.appendChild(col);
+      /*const ricerca = document.getElementById("ricerca");
+      ricerca.addEventListener("click", () => {
+        const searchValue = document
+          .getElementById("collapseInput")
+          .value.toLowerCase();
+        for (prodotto of prodotti) {
+          if (prodotto.name != searchValue) {
+            col.classList.add("d-none");
+          } else {
+            col.classList.remove("d-none");
+          }
+        }
+      }); PROVA DEL SEARCH, NON FUNZIONA ANCORA */
     }
   });
