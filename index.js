@@ -9,6 +9,8 @@ fetch(url, {
   .then((resp) => resp.json())
 
   .then((data) => {
+    const spinner = document.getElementById("spinner");
+    spinner.classList.add("d-none");
     const prodotti = data;
     const row = document.getElementById("row");
     row.innerHTML = "";

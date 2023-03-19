@@ -15,26 +15,36 @@ window.onload = () => {
     .then((resp) => resp.json())
 
     .then((prodotto) => {
+      const spinner = document.getElementById("spinner");
+      spinner.classList.add("d-none");
       const row = document.getElementById("row");
       row.innerHTML = "";
 
       const col = document.createElement("div");
-      col.className = "col";
-      col.innerHTML = ` <div class="card container ">
+      col.className = "col-6";
+      col.innerHTML = ` <div class="container ">
                                 <img
-                                    style="object-fit: cover; width: 500px; ""
+                                    style="object-fit: cover; height:700px; width:"200"
                                     src= ${prodotto.imageUrl} 
                                     class="card-img-top img-fluid d-block"
                                     alt="card-pic"
                                 />
-                                <div class="card-body">
-                                    <h5 class="card-title">${prodotto.name}</h5>
-                                    <p class="card-text">${prodotto.brand}</p>
-                                    <p class="card-text">${prodotto.price}€</p>
-                                    <p class="card-text d-flex flex-wrap" >${prodotto.description}</p>
-                                </div>
+                                
+                        </div>`;
+
+      const col2 = document.createElement("div");
+      col2.className = "col-6 align-self-center";
+      col2.innerHTML = `<div class="container lh-lg">
+
+                          <div class="col">
+                            <h5 class="fs-2">${prodotto.name}</h5>
+                            <p class="fs-3 fw-light">${prodotto.brand}</p>
+                            <p class="fs-3">${prodotto.price}€</p>
+                            <p class="d-flex flex-wrap" >${prodotto.description}</p>
+                          </div>
                         </div>`;
 
       row.appendChild(col);
+      row.appendChild(col2);
     });
 };
